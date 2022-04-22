@@ -4,37 +4,27 @@ import InputRow from './Components/InputRow';
 
 function App() {
   const [colors, setcolors] = useState({inputs: [{id: 1, color:'#000000'},{id: 2, color:'#000000'}]})
-  const [colorsH, setColorsH] = useState([])
   const [counter, setCounter] = useState(3)
   const [toggle, setToggle] = useState(false)
   const [x, setX] = useState(1)
   const [deg, setDeg] = useState(50)
-  
- 
-  
   const colorsArr = colors.inputs.map(item => item.color)
-  console.log(colorsArr)
-  
   const mapped = colorsArr.map((prev,index)=> {
     return (prev)
   })
   let styles = {
     background: `linear-gradient(${deg}deg, ${mapped})`
-
   }
-  
   let p = `background: linear-gradient(${deg}deg, ${mapped}); 
 -moz-background: linear-gradient(${deg}deg, ${mapped}); 
 -webkit: linear-gradient(${deg}deg, ${mapped})`
-  console.log(p)
+  
   function addInput() {
     setCounter(prev => prev += 1)
     let newElement = {id: counter, color:'#000000'}
 
-    console.log(newElement)
     setcolors(prev => ({
       inputs: [...prev.inputs, newElement ],
-      
     })) 
   }
 
@@ -55,22 +45,6 @@ function App() {
     }))
   }
 
- 
-  const inputGen = colors.inputs.map(prev => {
-    return (
-      <InputRow
-        id = {prev.id}
-        color = {prev.color}
-        key = {prev.id}
-        togglePicker = {togglePicker}
-        toggle = {toggle}
-        x = {x}
-        changeColor = {changeColor}
-        
-      />
-    )
-  })
-
   function togglePicker(e) {
     setX(parseInt(e.target.parentElement.id))
     setToggle(!toggle)
@@ -81,6 +55,20 @@ function App() {
     
     setDeg(e.target.value)
   }
+  
+  const inputGen = colors.inputs.map(prev => {
+    return (
+      <InputRow
+        id = {prev.id}
+        color = {prev.color}
+        key = {prev.id}
+        togglePicker = {togglePicker}
+        toggle = {toggle}
+        x = {x}
+        changeColor = {changeColor}
+      />
+    )
+  })
 
   return (
     <div className='app'>
