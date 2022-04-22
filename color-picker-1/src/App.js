@@ -9,15 +9,12 @@ function App() {
   const [x, setX] = useState(1)
   const [deg, setDeg] = useState(50)
   const colorsArr = colors.inputs.map(item => item.color)
-  const mapped = colorsArr.map((prev,index)=> {
-    return (prev)
-  })
   let styles = {
-    background: `linear-gradient(${deg}deg, ${mapped})`
+    background: `linear-gradient(${deg}deg, ${colorsArr})`
   }
-  let p = `background: linear-gradient(${deg}deg, ${mapped}); 
--moz-background: linear-gradient(${deg}deg, ${mapped}); 
--webkit: linear-gradient(${deg}deg, ${mapped})`
+  let p = `background: linear-gradient(${deg}deg, ${colorsArr}); 
+-moz-background: linear-gradient(${deg}deg, ${colorsArr}); 
+-webkit: linear-gradient(${deg}deg, ${colorsArr})`
   
   function addInput() {
     setCounter(prev => prev += 1)
