@@ -20,7 +20,8 @@ code {
   display: flex;
   flex-direction: row;
   margin-top: 20px;
-  margin-left: 50px;
+  margin-left: 25%;
+  margin-right: 25%;
   
 }
 
@@ -75,8 +76,12 @@ code {
 .picker {
   position: absolute;
   z-index: 1;
-  left: 1010px;
- 
+  left: 1450px;
+}
+
+.header {
+  text-align: center;
+  padding-left: 100px;
 }
 
 .pickerHidden {

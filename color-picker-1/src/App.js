@@ -3,9 +3,9 @@ import { HexColorPicker as Picker } from 'react-colorful';
 import InputRow from './Components/InputRow';
 
 function App() {
-  const [colors, setcolors] = useState({inputs: [{id: 1, color:'#000000'}]})
+  const [colors, setcolors] = useState({inputs: [{id: 1, color:'#000000'},{id: 2, color:'#000000'}]})
   const [colorsH, setColorsH] = useState([])
-  const [counter, setCounter] = useState(2)
+  const [counter, setCounter] = useState(3)
   const [toggle, setToggle] = useState(false)
   const [x, setX] = useState(1)
   const [deg, setDeg] = useState(50)
@@ -22,14 +22,10 @@ function App() {
     background: `linear-gradient(${deg}deg, ${mapped})`
 
   }
-  let stylesa = {
-    background: `
-    linear-gradient(${deg}deg, ${mapped})
-    `
-  }
+  
   let p = `background: linear-gradient(${deg}deg, ${mapped}); 
-  -moz-background: linear-gradient(${deg}deg, ${mapped}); 
-  -webkit: linear-gradient(${deg}deg, ${mapped})`
+-moz-background: linear-gradient(${deg}deg, ${mapped}); 
+-webkit: linear-gradient(${deg}deg, ${mapped})`
   console.log(p)
   function addInput() {
     setCounter(prev => prev += 1)
